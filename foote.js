@@ -37,8 +37,8 @@ const footerHTML = `
         
         <div class="footer-bottom">
             <div class="company-info">
-                <p>상호: 유어포스트 | 대표: [대표자명] | 사업자등록번호: [번호]</p>
-                <p>주소: 경기도 성남시 수정구 | 이메일: contact@yourpost.co.kr</p>
+                <p>상호: 유어포스트 | 대표: 윤세연 | 사업자등록번호: 414-01-72641 </p>
+                <p>주소: 경기도 성남시 수정구 | 이메일: cs@yourpost.co.kr</p>
             </div>
             <p class="copyright">&copy; 2025 Yourpost. All rights reserved.</p>
         </div>
