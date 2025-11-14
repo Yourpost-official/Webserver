@@ -12,7 +12,7 @@ yourpost-html/
 ├── onedaypost.html # 하루편지 서비스 소개
 ├── contact.html    # 연락처 및 문의
 ├── support.html    # 후원 안내
-└── README.md       # 이 파일
+└── README.md       # 이 파일 (readme)
 ```
 
 ## 🚀 빠른 시작
