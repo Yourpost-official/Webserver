@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하루편지 - 매일의 작은 위로</title>
+    <meta name="description" content="당신만을 위한 개인 맞춤형 편지 구독 서비스">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="ondaypost-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home')">
+                <img src="../logo.png" alt="하루편지" class="logo-img">
+                <span>하루편지</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">홈</a></li>
+                <li><a href="#" onclick="showPage('about')">소개</a></li>
+                <li><a href="#" onclick="showPage('apply')">신청하기</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home" class="active">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>당신의 하루에<br>전하는 작은 위로</h1>
+                    <p>바쁜 일상 속 잠시 멈추어 설 수 있는 시간,<br>
+                    당신을 위한 아주 작은 선물이 되는 편지를 전해드립니다.</p>
+                    <div class="hero-buttons">
+                        <a href="#" onclick="showPage('apply')" class="btn-primary">지금 신청하기</a>
+                        <a href="#" onclick="showPage('about')" class="btn-secondary">자세히 알아보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <h2>하루편지가 특별한 이유</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>개인 맞춤형</h3>
+                        <p>AI 기술로 당신의 상황과 감정을 이해하고, 당신만을 위한 특별한 메시지를 전해드립니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💝</div>
+                        <h3>지속적인 동행</h3>
+                        <p>일회성이 아닌 매달 찾아오는 따뜻함. 외로운 일상 속 꾸준한 친구가 되어드립니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✉️</div>
+                        <h3>아날로그 감성</h3>
+                        <p>디지털이 아닌 실제 편지로 전하는 진심. 우편함에 도착하는 설렘을 경험하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="about">
+        <section>
+            <div class="container">
+                <h1>하루편지를 소개합니다</h1>
+                
+                <div class="content-box mission-box">
+                    <h2>하루편지란?</h2>
+                    <p>하루편지는 당신의 바쁜 일상 속 잠시 멈추어 설 수 있는 시간, 그리고 당신을 위한 아주 작은 선물이 되길 추구하며 '매일의 작은 위로'를 전해주는 정기 구독형 편지 서비스입니다.</p>
+                </div>
+
+                <h2 style="margin-top: 3rem;">누구를 위한 서비스인가요?</h2>
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">💭</div>
+                        <h3>정서적 위로가 필요한 분</h3>
+                        <p>우울감이나 외로움을 느끼실 때, 작은 위로가 필요하신 분들께</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>혼자 있는 시간이 많은 분</h3>
+                        <p>대인관계가 어렵거나 혼자만의 시간이 많으신 분들께</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>감성적 경험을 원하는 분</h3>
+                        <p>아날로그 감성과 진심 어린 메시지를 좋아하시는 분들께</p>
+                    </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 3rem;">
+                    <h2>어떻게 진행되나요?</h2>
+                    <div class="process-list">
+                        <div class="process-item">
+                            <div class="process-number">1</div>
+                            <div>
+                                <h3>신청</h3>
+                                <p>간단한 정보를 입력해주세요</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">2</div>
+                            <div>
+                                <h3>개인화</h3>
+                                <p>당신의 상황과 선호도를 알려주세요</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">3</div>
+                            <div>
+                                <h3>제작</h3>
+                                <p>AI가 당신만을 위한 맞춤 편지를 작성합니다</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">4</div>
+                            <div>
+                                <h3>발송</h3>
+                                <p>매달 당신의 우편함으로 편지가 도착합니다</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">5</div>
+                            <div>
+                                <h3>위로</h3>
+                                <p>편지를 읽으며 잠시 쉬어가세요</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="apply">
+        <section>
+            <div class="container">
+                <h1>하루편지 신청</h1>
+                <p class="page-desc">베타 테스터에게는 특별한 혜택을 드립니다</p>
+
+                <div class="form-container">
+                    <iframe data-tally-src="https://tally.so/embed/xXxqoG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0" title="하루편지 시제품 이벤트 신청폼"></iframe>
+                </div>
+
+                <div class="benefits-box">
+                    <h3>베타 테스터 혜택</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎁</span>
+                            <span>정식 오픈 전 무료 체험</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <span>정식 구독 시 특별 할인</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🤝</span>
+                            <span>서비스 개선 참여 기회</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../footer.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+    </script>
+</body>
+</html>
