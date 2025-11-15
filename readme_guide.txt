@@ -36,6 +36,28 @@ yourpost-website/
 - 권장 크기: 200x200px 이상
 - 형식: PNG (투명 배경)
 
+### 3. 테스트
+```
+✓ PC에서 스크롤 (끝까지 스크롤해야 넘어감)
+✓ 모바일에서 스와이프 (릴스처럼)
+✓ 문의 폼 이메일 전송
+✓ 하루편지 vs 메인 디자인 차이
+✓ 모든 링크 작동
+```
+
+## 📝 최종 파일 구조
+```
+Webserver/
+├── index.html              ✅ 브랜드 컬러 + 풀스크롤
+├── styles.css             ✅ 메인 스타일
+├── script.js              ✅ 이메일 + 스크롤 로직
+├── EMAIL_SETUP.md         ✅ 이메일 설정 가이드
+├── privacy.html           
+├── terms.html             
+├── logo.png               
+└── ondaypost/
+    └── index.html         ✅ 친근한 디자인
+
 ### 2. 정보 수정
 
 다음 파일들에서 실제 정보로 교체하세요:
