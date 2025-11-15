@@ -309,5 +309,24 @@
             </div>
         </div>
     </div>
+    <!-- index.html 맨 끝, </body> 바로 위 -->
+<script>
+function showPage(pageId) {
+    const pages = document.querySelectorAll('main');
+    pages.forEach(p => p.classList.remove('active'));
+    
+    const target = document.getElementById(pageId);
+    if (target) {
+        target.classList.add('active');
+        window.scrollTo(0, 0);
+    }
+    
+    // 모바일 메뉴 닫기
+    const menu = document.getElementById('navLinks');
+    const toggle = document.getElementById('menuToggle');
+    if (menu) menu.classList.remove('active');
+    if (toggle) toggle.classList.remove('active');
+}
+</script>
 </body>
 </html>

@@ -20,7 +20,8 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
 
 let isTransitioning = false;
 
-function showPage(pageId) {
+// 글로벌 스코프에 함수 등록
+window.showPage = function(pageId) {
     if (isTransitioning) return;
     isTransitioning = true;
     
@@ -65,6 +66,7 @@ function showPage(pageId) {
     if (menuToggle && navLinks) {
         menuToggle.classList.remove('active');
         navLinks.classList.remove('active');
+        document.body.style.overflow = '';
     }
     
     // Smooth scroll to top
@@ -72,7 +74,7 @@ function showPage(pageId) {
         top: 0,
         behavior: 'smooth'
     });
-}
+};
 
 // ===== MOBILE MENU =====
 
@@ -215,8 +217,7 @@ if (contactForm) {
         try {
             // ===== 방법 1: EmailJS 사용 (추천) =====
             
-            // EmailJS 스크립트 추가 필요: 
-            <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            // EmailJS 스크립트 추가 필요: <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
             const result = await emailjs.send(
                 EMAIL_CONFIG.serviceId,
                 EMAIL_CONFIG.templateId,
@@ -230,7 +231,7 @@ if (contactForm) {
                 },
                 EMAIL_CONFIG.publicKey
             );
-            if (result.status !== 200) throw new Error('전송 실패');
+            
             
             // ===== 방법 2: Formspree 사용 =====
             /*
