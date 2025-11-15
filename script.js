@@ -4,7 +4,7 @@
 // 사용법: https://www.emailjs.com/
 const EMAIL_CONFIG = {
     serviceId: 'service_zhux95n',     // EmailJS에서 발급
-    templateId: 'YOUR_TEMPLATE_ID',   // EmailJS에서 생성
+    templateId: 'template_b82srai',   // EmailJS에서 생성
     publicKey: 'M3ZlrMF7mgBWyqUDB'      // EmailJS에서 발급
 };
 
