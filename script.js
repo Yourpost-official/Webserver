@@ -116,7 +116,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Animate elements on scroll
 window.addEventListener('load', () => {
     const animateElements = document.querySelectorAll('.service-tile, .value-card, .service-detail');
     
