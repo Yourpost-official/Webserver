@@ -4,21 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>하루편지 - 매일의 작은 위로</title>
-    <meta name="description" content="당신만을 위한 개인 맞춤형 편지 구독 서비스">
+    <meta name="description" content="개인 맞춤형 편지 구독 서비스">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="ondaypost-styles.css">
+    <style>
+        .ondaypost-hero {
+            text-align: center;
+            padding: 120px 0 80px;
+            background: var(--bg);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn-secondary {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            text-decoration: none;
+            border-radius: 980px;
+            font-size: 17px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .features-section {
+            background: var(--white);
+        }
+
+        .features-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .feature-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-box {
+            text-align: center;
+        }
+
+        .feature-box h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .feature-box p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.47;
+        }
+
+        .about-section {
+            background: var(--bg);
+        }
+
+        .about-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 21px;
+            line-height: 1.52;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .process-section {
+            background: var(--white);
+        }
+
+        .process-items {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            font-weight: 600;
+            margin: 0 auto 16px;
+        }
+
+        .process-step h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .apply-section {
+            background: var(--bg);
+        }
+
+        .form-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 40px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .form-wrapper iframe {
+            border: none;
+            width: 100%;
+        }
+
+        .benefits-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .benefits-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .benefits-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 32px;
+            background: var(--bg);
+            border-radius: 18px;
+        }
+
+        .benefit-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 734px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .feature-items {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .process-items {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-wrapper {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <a href="#" class="logo" onclick="showPage('home')">
                 <img src="../logo.png" alt="하루편지" class="logo-img">
-                <span>하루편지</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home')">홈</a></li>
                 <li><a href="#" onclick="showPage('about')">소개</a></li>
-                <li><a href="#" onclick="showPage('apply')">신청하기</a></li>
+                <li><a href="#" onclick="showPage('apply')">신청</a></li>
+                <li><a href="https://yourpost.co.kr">Yourpost</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -29,38 +218,34 @@
     </header>
 
     <main id="home" class="active">
-        <section class="hero">
+        <section class="ondaypost-hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>당신의 하루에<br>전하는 작은 위로</h1>
-                    <p>바쁜 일상 속 잠시 멈추어 설 수 있는 시간,<br>
-                    당신을 위한 아주 작은 선물이 되는 편지를 전해드립니다.</p>
-                    <div class="hero-buttons">
-                        <a href="#" onclick="showPage('apply')" class="btn-primary">지금 신청하기</a>
-                        <a href="#" onclick="showPage('about')" class="btn-secondary">자세히 알아보기</a>
-                    </div>
+                <h1>하루편지</h1>
+                <p class="hero-subtitle">매달 도착하는<br>당신만을 위한 편지</p>
+                <div class="hero-buttons">
+                    <a href="#" onclick="showPage('apply')" class="btn-primary">신청하기</a>
+                    <a href="#" onclick="showPage('about')" class="btn-secondary">자세히 알아보기</a>
                 </div>
             </div>
         </section>
 
         <section class="features-section">
             <div class="container">
-                <h2>하루편지가 특별한 이유</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
+                <div class="features-intro">
+                    <h2>특별한 이유</h2>
+                </div>
+                <div class="feature-items">
+                    <div class="feature-box">
                         <h3>개인 맞춤형</h3>
-                        <p>AI 기술로 당신의 상황과 감정을 이해하고, 당신만을 위한 특별한 메시지를 전해드립니다.</p>
+                        <p>당신의 상황과 감정을 이해하는 특별한 메시지</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💝</div>
+                    <div class="feature-box">
                         <h3>지속적인 동행</h3>
-                        <p>일회성이 아닌 매달 찾아오는 따뜻함. 외로운 일상 속 꾸준한 친구가 되어드립니다.</p>
+                        <p>매달 찾아오는 따뜻한 친구</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✉️</div>
+                    <div class="feature-box">
                         <h3>아날로그 감성</h3>
-                        <p>디지털이 아닌 실제 편지로 전하는 진심. 우편함에 도착하는 설렘을 경험하세요.</p>
+                        <p>실제 편지로 전하는 진심</p>
                     </div>
                 </div>
             </div>
@@ -68,72 +253,63 @@
     </main>
 
     <main id="about">
-        <section>
+        <section class="about-section">
             <div class="container">
-                <h1>하루편지를 소개합니다</h1>
-                
-                <div class="content-box mission-box">
-                    <h2>하루편지란?</h2>
-                    <p>하루편지는 당신의 바쁜 일상 속 잠시 멈추어 설 수 있는 시간, 그리고 당신을 위한 아주 작은 선물이 되길 추구하며 '매일의 작은 위로'를 전해주는 정기 구독형 편지 서비스입니다.</p>
+                <h1>About</h1>
+                <div class="about-content">
+                    <p>하루편지는 바쁜 일상 속 잠시 멈추어 설 수 있는 시간, 그리고 당신을 위한 아주 작은 선물이 되길 추구하는 정기 구독형 편지 서비스입니다.</p>
                 </div>
+            </div>
+        </section>
 
-                <h2 style="margin-top: 3rem;">누구를 위한 서비스인가요?</h2>
-                <div class="features-grid" style="margin-top: 2rem;">
-                    <div class="feature-card">
-                        <div class="feature-icon">💭</div>
-                        <h3>정서적 위로가 필요한 분</h3>
-                        <p>우울감이나 외로움을 느끼실 때, 작은 위로가 필요하신 분들께</p>
+        <section class="features-section">
+            <div class="container">
+                <h2>누구를 위한 서비스인가요</h2>
+                <div class="feature-items" style="margin-top: 40px;">
+                    <div class="feature-box">
+                        <h3>정서적 위로가<br>필요한 분</h3>
+                        <p>우울감이나 외로움을 느끼실 때</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏠</div>
-                        <h3>혼자 있는 시간이 많은 분</h3>
-                        <p>대인관계가 어렵거나 혼자만의 시간이 많으신 분들께</p>
+                    <div class="feature-box">
+                        <h3>혼자 있는 시간이<br>많은 분</h3>
+                        <p>대인관계가 어렵거나 고독한 시간이 많을 때</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✨</div>
-                        <h3>감성적 경험을 원하는 분</h3>
-                        <p>아날로그 감성과 진심 어린 메시지를 좋아하시는 분들께</p>
+                    <div class="feature-box">
+                        <h3>감성적 경험을<br>원하는 분</h3>
+                        <p>아날로그 감성과 진심 어린 메시지를 좋아하시는 분</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="content-box" style="margin-top: 3rem;">
-                    <h2>어떻게 진행되나요?</h2>
-                    <div class="process-list">
-                        <div class="process-item">
-                            <div class="process-number">1</div>
-                            <div>
-                                <h3>신청</h3>
-                                <p>간단한 정보를 입력해주세요</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">2</div>
-                            <div>
-                                <h3>개인화</h3>
-                                <p>당신의 상황과 선호도를 알려주세요</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">3</div>
-                            <div>
-                                <h3>제작</h3>
-                                <p>AI가 당신만을 위한 맞춤 편지를 작성합니다</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">4</div>
-                            <div>
-                                <h3>발송</h3>
-                                <p>매달 당신의 우편함으로 편지가 도착합니다</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">5</div>
-                            <div>
-                                <h3>위로</h3>
-                                <p>편지를 읽으며 잠시 쉬어가세요</p>
-                            </div>
-                        </div>
+        <section class="process-section">
+            <div class="container">
+                <h2>진행 과정</h2>
+                <div class="process-items">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>신청</h3>
+                        <p>간단한 정보 입력</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>개인화</h3>
+                        <p>선호도 설정</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>제작</h3>
+                        <p>맞춤 편지 작성</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>발송</h3>
+                        <p>우편 배송</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>위로</h3>
+                        <p>편지 읽기</p>
                     </div>
                 </div>
             </div>
@@ -141,39 +317,69 @@
     </main>
 
     <main id="apply">
-        <section>
+        <section class="apply-section">
             <div class="container">
-                <h1>하루편지 신청</h1>
-                <p class="page-desc">베타 테스터에게는 특별한 혜택을 드립니다</p>
+                <h1>Apply</h1>
+                <p class="section-intro">베타 테스터에게는 특별한 혜택을 드립니다</p>
 
-                <div class="form-container">
-                    <iframe data-tally-src="https://tally.so/embed/xXxqoG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0" title="하루편지 시제품 이벤트 신청폼"></iframe>
+                <div class="form-wrapper">
+                    <iframe data-tally-src="https://tally.so/embed/xXxqoG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0" title="하루편지 신청"></iframe>
                 </div>
+            </div>
+        </section>
 
-                <div class="benefits-box">
-                    <h3>베타 테스터 혜택</h3>
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <span class="benefit-icon">🎁</span>
-                            <span>정식 오픈 전 무료 체험</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">💰</span>
-                            <span>정식 구독 시 특별 할인</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">🤝</span>
-                            <span>서비스 개선 참여 기회</span>
-                        </div>
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="benefits-title">Beta Tester Benefits</h2>
+                <div class="benefits-row">
+                    <div class="benefit-card">
+                        <h3>무료 체험</h3>
+                        <p>정식 오픈 전 무료로 체험</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>특별 할인</h3>
+                        <p>정식 구독 시 할인 혜택</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>개선 참여</h3>
+                        <p>서비스 개선 과정에 참여</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <div id="footer-container"></div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="#" onclick="showPage('home')">하루편지</a>
+                    <a href="https://yourpost.co.kr">Yourpost</a>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <a href="#" onclick="showPage('about')">서비스 소개</a>
+                    <a href="#" onclick="showPage('apply')">신청하기</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="../privacy.html">개인정보처리방침</a>
+                    <a href="../terms.html">이용약관</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Family Sites</h4>
+                    <a href="https://ipceo.kaist.ac.kr" target="_blank">KAIST CCE</a>
+                    <a href="https://ceo.postech.ac.kr" target="_blank">POSTECH CEO</a>
+                    <a href="https://impactceo.art" target="_blank">IMPACT</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Yourpost. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="../footer.js"></script>
     <script src="../script.js"></script>
     <script>
         var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
