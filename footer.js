@@ -5,7 +5,7 @@ const footerHTML = `
         <div class="footer-main">
             <div class="footer-section">
                 <h4>Yourpost</h4>
-                <p>편지로 전하는 마음</p>
+                <p>더 멀리, 더 가까이</p>
                 <p class="footer-desc">마음을 전하는 다양한 방법을 제공합니다</p>
             </div>
             

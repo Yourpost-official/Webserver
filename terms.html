@@ -310,6 +310,17 @@
         </div>
     </div>
     <!-- index.html 맨 끝, </body> 바로 위 -->
+    <div id="footer-container"></div>
+    <script>
+    // 현재 파일의 경로에 따라 자동으로 footer.js 경로 결정
+    const currentPath = window.location.pathname;
+    const isSubfolder = currentPath.includes('/ondaypost/') || currentPath.includes('/subfolder/');
+    const footerPath = isSubfolder ? '../footer.js' : './footer.js';
+    
+    const script = document.createElement('script');
+    script.src = footerPath;
+    document.body.appendChild(script);
+    </script>
 <script>
 function showPage(pageId) {
     const pages = document.querySelectorAll('main');

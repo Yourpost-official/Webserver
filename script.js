@@ -420,3 +420,61 @@ window.addEventListener('load', () => {
 // Prevent FOUC
 document.body.style.opacity = '0';
 document.body.style.transition = 'opacity 0.3s';
+
+
+
+// ===== 팝업 함수 =====
+// 여기서부터는 팝업부분입니다 popup
+
+// 팝업 열기
+function openPopup(popupId) {
+    var popup = document.getElementById(popupId);
+    var overlay = document.getElementById('popupOverlay');
+    
+    if (popup && overlay) {
+        popup.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// 팝업 닫기
+function closePopup(popupId) {
+    var popup = document.getElementById(popupId);
+    var overlay = document.getElementById('popupOverlay');
+    
+    if (popup && overlay) {
+        popup.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// 팝업 초기화 및 이벤트 설정
+document.addEventListener('DOMContentLoaded', function() {
+    var overlay = document.getElementById('popupOverlay');
+    
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            var popups = document.querySelectorAll('.popup-modal.active');
+            popups.forEach(function(popup) {
+                closePopup(popup.id);
+            });
+        });
+    }
+
+//페이지 로드 후 자동 팝업 띄우기 (필요시 주석 해제)
+    setTimeout(function() {
+        openPopup('eventPopup');
+    }, 20);
+});
+
+// ESC 키로 팝업 닫기
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        var popups = document.querySelectorAll('.popup-modal.active');
+        popups.forEach(function(popup) {
+            closePopup(popup.id);
+        });
+    }
+});

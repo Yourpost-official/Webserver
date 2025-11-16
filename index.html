@@ -49,7 +49,7 @@
             <div class="spotlight-content">
                 <h2 class="spotlight-title">하루편지</h2>
                 <p class="spotlight-subtitle">매달 도착하는 당신만을 위한 편지</p>
-                <p class="spotlight-description">10-20대를 위한 개인 맞춤형 편지 구독 서비스. 정서적 위로가 필요한 순간, 우편함에 도착하는 따뜻한 한 통의 편지.</p>
+                <p class="spotlight-description">개인 맞춤형 편지,굿즈 구독형 서비스. 정서적 위로가 필요한 순간, 우편함에 도착하는 따뜻한 한 통의 편지.</p>
                 <div class="spotlight-links">
                     <a href="https://ondaypost.yourpost.co.kr" class="link-primary">자세히 알아보기</a>
                     <a href="https://ondaypost.yourpost.co.kr" class="link-secondary">지금 시작하기</a>
@@ -213,11 +213,22 @@
                 <div class="service-detail">
                     <div class="service-detail-header">
                         <div>
-                            <h2>생일편지 대필 서비스</h2>
+                            <h2>생일편지 서비스</h2>
                             <span class="status-pill">준비중</span>
                         </div>
                     </div>
                     <p class="service-detail-desc">특별한 날, 특별한 사람에게 전하고 싶은 마음을 담은 편지를 대신 작성해드립니다. 전문 작가가 당신의 마음을 정성스럽게 담아냅니다.</p>
+                </div>
+
+                <div class="service-detail">
+                    <div class="service-detail-header">
+                        <div>
+                            <h2>기념일 편지서비스</h2>
+                            <span class="status-pill">준비중</span>
+                        </div>
+                    </div>
+                    <p class="service-detail-desc">특별한 날, 특별한 사람에게 전하고 싶은 마음을 담은 편지를 대신 작성해드립니다. 
+                        <br> 마음을 담은 편지를 쓰고싶은데 어려운 당신의 마음을 정성스럽게 대신 담아냅니다.</p>
                 </div>
 
                 <div class="service-detail">
@@ -243,11 +254,11 @@
                 <div class="service-detail">
                     <div class="service-detail-header">
                         <div>
-                            <h2>정기구독형 말씀카드</h2>
+                            <h2>말씀엽서 구독서비스</h2>
                             <span class="status-pill planning">기획중</span>
                         </div>
                     </div>
-                    <p class="service-detail-desc">종교적 및 영적 콘텐츠를 정기적으로 받아보실 수 있는 구독 서비스입니다. 매주 또는 매월 영감을 주는 말씀을 전해드립니다.</p>
+                    <p class="service-detail-desc">성경말씀을 엽서 형태로 정기적으로 받아보실 수 있는 구독 서비스입니다.</p>
                 </div>
             </div>
         </section>
@@ -328,7 +339,7 @@
     </main>
 
     <footer>
-        <div class="footer-container">
+        <!-- <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Services</h4>
@@ -356,11 +367,11 @@
                 <p>유어포스트 | 대표: [대표자명] | 사업자등록번호: [번호]</p>
                 <p>© 2025 Yourpost. All rights reserved.</p>
             </div>
-        </div>
-    </footer>
+        </div>  -->
 
-    <script src="script.js"></script>
-    <!-- index.html 맨 끝, </body> 바로 위 -->
+        <div id="footer-container"></div>
+        <script src="./footer.js"></script>
+    </footer>
 <script>
 function showPage(pageId) {
     const pages = document.querySelectorAll('main');
@@ -379,5 +390,31 @@ function showPage(pageId) {
     if (toggle) toggle.classList.remove('active');
 }
 </script>
+<!-- 여기서부터 팝업부분입니다 팝업 팝업 팝업 팝업 popup popup pop up-->
+<!-- 팝업 배경 (Overlay) -->
+<div id="popupOverlay" class="popup-overlay"></div>
+
+<!-- ========================================
+     1. index.html - </body> 바로 위에 추가
+     ======================================== -->
+
+<!-- 팝업 오버레이 -->
+<div id="popupOverlay" class="popup-overlay"></div>
+
+<!-- 이벤트 팝업 프리셋 -->
+<div id="eventPopup" class="popup-modal">
+    <div class="popup-content">
+        <button class="popup-close" onclick="closePopup('eventPopup')">&times;</button>
+        <img src="./popup/ondaypostevent.png" alt="하루편지" class="popup-image">
+        <h2>하루편지 베타 오픈!</h2>
+        <p>매달 도착하는 당신만을 위한 편지</p>
+        <p class="popup-subtext">지금 신청하면 특별 혜택을 받을 수 있어요</p>
+        <div class="popup-buttons">
+            <a href="./ondaypost/" class="popup-btn-primary">신청하기</a>
+            <button class="popup-btn-secondary" onclick="closePopup('eventPopup')">닫기</button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
