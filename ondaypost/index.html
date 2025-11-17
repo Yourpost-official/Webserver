@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>하루편지 - 매일의 작은 위로</title>
     <meta name="description" content="개인 맞춤형 편지 구독 서비스 - 하루편지">
-    <link rel="stylesheet" href="on-styles.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -218,5 +218,6 @@
         // Tally 폼 스크립트
         var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
     </script>
+    
 </body>
 </html>
