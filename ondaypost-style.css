@@ -620,3 +620,345 @@ section {
         padding: 32px 24px;
     }
 }
+
+/* ============================================
+   🔧 하루편지(ondaypost) 푸터 - 레이아웃 완벽 수정
+   파일: /ondaypost/ondaypost-styles.css 맨 아래 추가
+   ============================================ */
+
+/* ===== 푸터 기본 컨테이너 ===== */
+#footer-container {
+    width: 100%;
+    margin-top: 100px;
+    padding: 0;
+    background: #1A1A1A;
+}
+
+#footer-container * {
+    box-sizing: border-box;
+}
+
+/* ===== 푸터 메인 요소 ===== */
+#footer-container footer {
+    background: #1A1A1A !important;
+    color: white !important;
+    margin: 0 !important;
+    padding: 80px 32px 40px !important;
+    border-top: 1px solid rgba(198, 60, 81, 0.1) !important;
+    width: 100% !important;
+    font-family: 'Pretendard', -apple-system, 'SF Pro Display', sans-serif !important;
+}
+
+/* ===== 푸터 콘텐츠 래퍼 ===== */
+#footer-container .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+/* ===== 푸터 메인 그리드 (5열) ===== */
+#footer-container .footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+/* ===== 푸터 섹션 ===== */
+#footer-container .footer-section {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#footer-container .footer-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #C63C51 !important;
+    line-height: 1;
+}
+
+/* ===== 푸터 텍스트 및 링크 ===== */
+#footer-container .footer-section p {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+    display: block;
+    text-decoration: none;
+}
+
+#footer-container .footer-section a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+#footer-container .footer-section a:hover {
+    color: #C63C51 !important;
+    text-decoration: none;
+}
+
+/* ===== 푸터 부설명 ===== */
+#footer-container .footer-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+/* ===== 푸터 하단 구분선 ===== */
+#footer-container .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+/* ===== 회사 정보 섹션 ===== */
+#footer-container .company-info {
+    flex: 1;
+    min-width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+#footer-container .company-info p {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+#footer-container .company-info a {
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline;
+    transition: color 0.3s ease;
+}
+
+#footer-container .company-info a:hover {
+    color: #C63C51 !important;
+}
+
+/* ===== 저작권 텍스트 ===== */
+#footer-container .copyright {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: right;
+}
+
+/* ============================================
+   📱 반응형 - 태블릿 (1068px 이하)
+   ============================================ */
+@media (max-width: 1068px) {
+    #footer-container .footer-main {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    #footer-container footer {
+        padding: 70px 32px 40px !important;
+    }
+}
+
+/* ============================================
+   📱 반응형 - 작은 태블릿 (834px 이하)
+   ============================================ */
+@media (max-width: 834px) {
+    #footer-container .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    #footer-container .footer-section h4 {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    #footer-container .footer-section p,
+    #footer-container .footer-section a {
+        font-size: 14px;
+    }
+
+    #footer-container footer {
+        padding: 60px 24px 40px !important;
+    }
+
+    #footer-container .footer-bottom {
+        padding-top: 32px;
+        gap: 24px;
+    }
+
+    #footer-container .copyright {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* ============================================
+   📱 반응형 - 모바일 (734px 이하)
+   ============================================ */
+@media (max-width: 734px) {
+    #footer-container footer {
+        padding: 60px 24px 40px !important;
+        margin-top: 80px !important;
+    }
+
+    #footer-container .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+
+    #footer-container .footer-section h4 {
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    #footer-container .footer-section p,
+    #footer-container .footer-section a {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    #footer-container .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 28px;
+        margin-top: 40px;
+    }
+
+    #footer-container .company-info {
+        min-width: 100%;
+        order: 1;
+    }
+
+    #footer-container .company-info p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    #footer-container .copyright {
+        text-align: left;
+        font-size: 12px;
+        width: 100%;
+        order: 2;
+    }
+}
+
+/* ============================================
+   📱 반응형 - 아주 작은 모바일 (480px 이하)
+   ============================================ */
+@media (max-width: 480px) {
+    #footer-container footer {
+        padding: 48px 16px 32px !important;
+    }
+
+    #footer-container .footer-main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    #footer-container .footer-section h4 {
+        font-size: 11px;
+        margin-bottom: 12px;
+        letter-spacing: 0.05em;
+    }
+
+    #footer-container .footer-section p,
+    #footer-container .footer-section a {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    #footer-container .footer-bottom {
+        gap: 16px;
+        padding-top: 24px;
+        margin-top: 32px;
+    }
+
+    #footer-container .company-info p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    #footer-container .copyright {
+        font-size: 11px;
+    }
+}
+
+/* ============================================
+   🔧 메인 사이트 섹션과의 간격 조정
+   ============================================ */
+main {
+    margin-bottom: 0;
+}
+
+/* ===== 기타 요소 스타일 초기화 ===== */
+#footer-container footer h1,
+#footer-container footer h2,
+#footer-container footer h3,
+#footer-container footer h5,
+#footer-container footer h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#footer-container footer ul,
+#footer-container footer ol {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#footer-container footer li {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ===== 푸터 내부 이미지 제거 ===== */
+#footer-container footer img {
+    display: none;
+}
+
+/* ===== 푸터 내부 버튼 스타일 초기화 ===== */
+#footer-container footer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}

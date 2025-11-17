@@ -1154,3 +1154,137 @@ footer {
         width: 100%;
     }
 }
+/* ===== FOOTER STYLES ===== */
+
+.footer {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 80px 32px 32px;
+    border-top: 1px solid rgba(198, 60, 81, 0.1);
+    margin-top: 100px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 60px;
+    margin-bottom: 48px;
+}
+
+.footer-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    color: #C63C51;
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #C63C51;
+}
+
+.footer-desc {
+    margin-top: 8px !important;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.company-info p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.company-info a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.company-info a:hover {
+    color: #C63C51;
+}
+
+.copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Footer 반응형 */
+@media (max-width: 1068px) {
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 734px) {
+    .footer {
+        padding: 60px 24px 24px;
+        margin-top: 80px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-section h4 {
+        font-size: 12px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 14px;
+    }
+
+    .copyright {
+        order: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer {
+        padding: 48px 16px 16px;
+    }
+}

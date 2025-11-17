@@ -478,3 +478,44 @@ document.addEventListener('keydown', function(event) {
         });
     }
 });
+
+// ===== FOOTER 및 확장성 유틸리티 함수 =====
+
+// 현재 페이지 경로 감지
+function getCurrentPagePath() {
+    return window.location.pathname;
+}
+
+// 현재 페이지가 서브페이지인지 확인
+function isSubpage() {
+    return window.location.pathname.includes('/ondaypost/');
+}
+
+// 기본 경로 가져오기
+function getBasePath() {
+    return isSubpage() ? '../' : './';
+}
+
+// 동적 경로 해석 함수 (향후 서브사이트 확장 시 사용)
+function resolvePath(filePath) {
+    const basePath = getBasePath();
+    // 이미 절대 경로거나 외부 링크면 그대로 반환
+    if (filePath.startsWith('http') || filePath.startsWith('/')) {
+        return filePath;
+    }
+    // 상대 경로에 기본 경로 추가
+    if (filePath.startsWith('../')) {
+        return filePath;
+    }
+    return basePath + filePath;
+}
+
+// 페이지 로드 시 디버그 정보 (개발 시 유용)
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('✅ Yourpost Footer System Loaded');
+        console.log('📍 Current Path:', getCurrentPagePath());
+        console.log('🌐 Is Subpage:', isSubpage());
+        console.log('📂 Base Path:', getBasePath());
+    }
+});
