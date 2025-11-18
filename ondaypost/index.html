@@ -11,15 +11,15 @@
     <!-- HEADER -->
     <header id="header">
         <nav>
-            <a href="#" class="logo" onclick="showPage('home')">
+            <a href="../" class="logo" title="유어포스트 홈으로 이동">
                 <img src="../logo.png" alt="하루편지" class="logo-img">
                 <span>하루편지</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#" onclick="showPage('home')">홈</a></li>
-                <li><a href="#" onclick="showPage('about')">소개</a></li>
-                <li><a href="#" onclick="showPage('apply')">신청</a></li>
-                <li><a href="../" target="_self">Yourpost</a></li>
+                <li><a href="#" onclick="showPage('home'); return false;" title="홈으로 이동">홈</a></li>
+                <li><a href="#" onclick="showPage('about'); return false;" title="소개 보기">소개</a></li>
+                <li><a href="#" onclick="showPage('apply'); return false;" title="신청하기">신청</a></li>
+                <li><a href="../" target="_self" title="유어포스트 홈으로 이동">Yourpost</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
