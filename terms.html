@@ -125,6 +125,112 @@
                 font-size: 1.3rem;
             }
         }
+        /* ===== FOOTER ===== */
+#footer-container {
+    background: #1a2f4a;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 60px 40px 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-section p {
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.footer-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+}
+
+.footer-section a {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.company-info {
+    margin-bottom: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.company-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.company-info a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.company-info a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+    #footer-container {
+        padding: 40px 24px 20px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+#footer-container {
+    background: #1a2f4a;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 60px 40px 30px;
+}
     </style>
 </head>
 <body>
@@ -321,23 +427,28 @@
     script.src = footerPath;
     document.body.appendChild(script);
     </script>
-<script>
-function showPage(pageId) {
-    const pages = document.querySelectorAll('main');
-    pages.forEach(p => p.classList.remove('active'));
-    
-    const target = document.getElementById(pageId);
-    if (target) {
-        target.classList.add('active');
-        window.scrollTo(0, 0);
+    <script>
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('main');
+        pages.forEach(p => p.classList.remove('active'));
+        
+        const target = document.getElementById(pageId);
+        if (target) {
+            target.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        
+        // 모바일 메뉴 닫기
+        const menu = document.getElementById('navLinks');
+        const toggle = document.getElementById('menuToggle');
+        if (menu) menu.classList.remove('active');
+        if (toggle) toggle.classList.remove('active');
     }
-    
-    // 모바일 메뉴 닫기
-    const menu = document.getElementById('navLinks');
-    const toggle = document.getElementById('menuToggle');
-    if (menu) menu.classList.remove('active');
-    if (toggle) toggle.classList.remove('active');
-}
-</script>
+
+    </script>
+            <footer>
+                <div id="footer-container"></div>
+                <script src="./footer.js"></script>
+            </footer>
 </body>
 </html>

@@ -125,6 +125,112 @@
                 font-size: 1.3rem;
             }
         }
+        /* ===== FOOTER ===== */
+#footer-container {
+    background: #1a2f4a;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 60px 40px 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-section p {
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.footer-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+}
+
+.footer-section a {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.company-info {
+    margin-bottom: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.company-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.company-info a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.company-info a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+    #footer-container {
+        padding: 40px 24px 20px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+#footer-container {
+    background: #1a2f4a;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 60px 40px 30px;
+}
     </style>
 </head>
 <body>
@@ -345,16 +451,16 @@
                 (국번없이) 1301<br>
                 www.spo.go.kr</p>
 
-                <p><strong>경찰청 사이버안전국</strong><br>
-                (국번없이) 182<br>
-                cyberbureau.police.go.kr</p>
+                <p><strong>국가안전기획부</strong><br>
+                (국번없이) 111<br>
+                nis.go.kr</p>
             </div>
         </div>
     </div>
     <!-- index.html 맨 끝, </body> 바로 위 -->
     <footer>
         <div id="footer-container"></div>
-        <script src="./footer.js"></script>
+        <script src="../footer.js"></script>
     </footer>
 <script>
 function showPage(pageId) {

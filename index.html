@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yourpost - 편지로 전하는 마음</title>
     <meta name="description" content="편지, 선물, 굿즈를 통해 마음을 전하는 종합 서비스 기업">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header id="header">
         <nav>
             <a href="#" class="logo" onclick="showPage('home')">
-                <img src="logo.png" alt="Yourpost" class="logo-img">
+                <img src="../logo.png" alt="Yourpost" class="logo-img">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home')">홈</a></li>
@@ -57,6 +57,19 @@
             </div>
         </section>
 
+        <!-- Featured Service -->
+        <section class="feature-christmas">
+            <div class="christmas-content">
+                <h2 class="christmas-title">크리스마스 말씀엽서</h2>
+                <p class="christmas-subtitle">Special EVENT</p>
+                <p class="christmas-description">크리스마스를 기념하는 말씀엽서</p>
+                <div class="christmas-links">
+                    <a href="https://christmascard.yourpost.co.kr" class="link-primary">자세히 알아보기</a>
+                    <a href="https://srv3.yourpost.co.kr" class="link-secondary">지금 시작하기</a>
+                </div>
+            </div>
+        </section>        
+
         <!-- Services Grid -->
         <section class="services-grid-section">
             <h2 class="section-heading">모든 서비스</h2>
@@ -70,14 +83,21 @@
                 </div>
                 <div class="service-tile">
                     <div class="tile-content">
+                        <h3>크리스마스 말씀엽서</h3>
+                        <p class="tile-desc">크리스마스 선물용 말씀엽서</p>
+                        <span class="tile-badge active">운영중</span>
+                    </div>
+                </div>
+                <!-- <div class="service-tile">
+                    <div class="tile-content">
                         <h3>생일편지 대필</h3>
                         <p class="tile-desc">특별한 날을 위한 편지</p>
                         <span class="tile-badge">준비중</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="service-tile">
                     <div class="tile-content">
-                        <h3>편지 굿즈</h3>
+                        <h3>굿즈 정기구독</h3>
                         <p class="tile-desc">감성을 담은 아이템</p>
                         <span class="tile-badge">준비중</span>
                     </div>
@@ -89,13 +109,13 @@
                         <span class="tile-badge">준비중</span>
                     </div>
                 </div>
-                <div class="service-tile">
+                <!-- <div class="service-tile">
                     <div class="tile-content">
-                        <h3>말씀카드</h3>
-                        <p class="tile-desc">정기 구독형 카드</p>
+                        <h3>말씀엽서</h3>
+                        <p class="tile-desc">정기 구독형 말씀엽서</p>
                         <span class="tile-badge planning">기획중</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -105,7 +125,7 @@
             <div class="values-container">
                 <div class="value-card">
                     <h3>진정성</h3>
-                    <p>진심을 담은 한 통의 편지로<br>마음을 전합니다</p>
+                    <p>진심을담은<br>마음을 전합니다</p>
                 </div>
                 <div class="value-card">
                     <h3>연결</h3>
@@ -136,7 +156,7 @@
                     </div>
                     <div class="column-right">
                         <p class="large-text">Yourpost는 외롭고 잊힌 이들의 하루에 작은 위로와 따뜻한 평안을 전하는 브랜드입니다.</p>
-                        <p>편지를 통한 정서적 연결과 위로를 제공하며, 디지털 시대 속 아날로그 감성을 회복합니다. 개인부터 기업까지, 다양한 형태의 마음 전달 솔루션을 제공합니다.</p>
+                        <p>편지를 통한 정서적 연결과 위로를 제공하며, 디지털 시대 속 아날로그 감성을 회복합니다. 개인부터 기업까지, 다양한 형태의 솔루션을 제공합니다.</p>
                     </div>
                 </div>
             </div>
@@ -203,11 +223,27 @@
                     </div>
                     <p class="service-detail-desc">매달 도착하는 개인 맞춤형 편지 구독 서비스입니다. 정서적 위로가 필요한 10-20대를 대상으로 개인 맞춤형 편지를 정기적으로 발송합니다.</p>
                     <div class="service-detail-meta">
-                        <span>타겟: 10-20대</span>
+                        <!-- <span>타겟: 10-20대</span> -->
                         <span>형태: 정기 구독</span>
-                        <span>특징: 개인 맞춤형</span>
+                        <!-- <span>특징: 개인 맞춤형</span> -->
                     </div>
                     <a href="https://ondaypost.yourpost.co.kr" class="btn-primary">서비스 바로가기</a>
+                </div>
+
+                <div class="service-detail">
+                    <div class="service-detail-header">
+                        <div>
+                            <h2>크리스마스 말씀엽서</h2>
+                            <span class="status-pill active">운영중</span>
+                        </div>
+                    </div>
+                    <p class="service-detail-desc">크리스마스기간 한정판매중인 말씀엽서입니다.</p>
+                    <div class="service-detail-meta">
+                        <!-- <span>크리스마스를 기념해 소중한 사람에게 말씀을 전하고싶은 사람 누구나</span> -->
+                        <span>형태: 우편발송</span>
+                        <!-- <span>특징: 개인 맞춤형</span> -->
+                    </div>
+                    <a href="https://christmascard.yourpost.co.kr" class="btn-primary">서비스 바로가기</a>
                 </div>
 
                 <div class="service-detail">
@@ -273,7 +309,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <!-- <section class="content-section">
             <div class="container">
                 <form class="contact-form-modern" id="contactForm">
                     <div class="form-group">
@@ -322,17 +358,17 @@
 
                     <button type="submit" class="btn-submit-large">문의하기</button>
                     <div class="form-message" id="formMessage"></div>
-                </form>
+                </form> -->
 
                 <div class="contact-direct">
                     <div class="contact-direct-item">
                         <h3>Email</h3>
                         <a href="mailto:contact@yourpost.co.kr">contact@yourpost.co.kr</a>
                     </div>
-                    <div class="contact-direct-item">
+                    <!-- <div class="contact-direct-item">
                         <h3>Address</h3>
                         <p>경기도 성남시 수정구</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -370,7 +406,7 @@
         </div>  -->
 
         <div id="footer-container"></div>
-        <script src="./footer.js"></script>
+        <script src="../footer.js"></script>
     </footer>
 <script>
 function showPage(pageId) {
@@ -390,31 +426,6 @@ function showPage(pageId) {
     if (toggle) toggle.classList.remove('active');
 }
 </script>
-<!-- 여기서부터 팝업부분입니다 팝업 팝업 팝업 팝업 popup popup pop up-->
-<!-- 팝업 배경 (Overlay) -->
-<div id="popupOverlay" class="popup-overlay"></div>
-
-<!-- ========================================
-     1. index.html - </body> 바로 위에 추가
-     ======================================== -->
-
-<!-- 팝업 오버레이 -->
-<div id="popupOverlay" class="popup-overlay"></div>
-
-<!-- 이벤트 팝업 프리셋 -->
-<div id="eventPopup" class="popup-modal">
-    <div class="popup-content">
-        <button class="popup-close" onclick="closePopup('eventPopup')">&times;</button>
-        <img src="./popup/ondaypostevent.png" alt="하루편지" class="popup-image">
-        <h2>하루편지 베타 오픈!</h2>
-        <p>매달 도착하는 당신만을 위한 편지</p>
-        <p class="popup-subtext">지금 신청하면 특별 혜택을 받을 수 있어요</p>
-        <div class="popup-buttons">
-            <a href="./ondaypost/" class="popup-btn-primary">신청하기</a>
-            <button class="popup-btn-secondary" onclick="closePopup('eventPopup')">닫기</button>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>
