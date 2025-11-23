@@ -144,7 +144,7 @@
         <section class="page-hero">
             <div class="container">
                 <h1 class="page-title">유어포스트</h1>
-                <p class="page-lead">우리는 세상이 쉽게 지나치는 마음에 편지를 보냅니다.<br>더 멀리 닿되, 더 가까이 다가가는 손편지처럼.</p>
+                <p class="page-lead">우리는 세상이 쉽게 지나치는 마음에 편지를 보냅니다.<br>더 멀리, 더 가까이 다가갈수있는 기업이되길 추구합니다.</p>
             </div>
         </section>
 
@@ -408,24 +408,26 @@
         <div id="footer-container"></div>
         <script src="../footer.js"></script>
     </footer>
-<script>
-function showPage(pageId) {
-    const pages = document.querySelectorAll('main');
-    pages.forEach(p => p.classList.remove('active'));
-    
-    const target = document.getElementById(pageId);
-    if (target) {
-        target.classList.add('active');
-        window.scrollTo(0, 0);
+    <script>
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('main');
+        pages.forEach(p => p.classList.remove('active'));
+        
+        const target = document.getElementById(pageId);
+        if (target) {
+            target.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        
+        // 모바일 메뉴 닫기
+        const menu = document.getElementById('navLinks');
+        const toggle = document.getElementById('menuToggle');
+        if (menu) menu.classList.remove('active');
+        if (toggle) toggle.classList.remove('active');
     }
-    
-    // 모바일 메뉴 닫기
-    const menu = document.getElementById('navLinks');
-    const toggle = document.getElementById('menuToggle');
-    if (menu) menu.classList.remove('active');
-    if (toggle) toggle.classList.remove('active');
-}
-</script>
+
+    </script>
+    <script src="../js/bug-banner.js"></script>
 
 </body>
 </html>
