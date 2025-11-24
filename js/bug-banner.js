@@ -12,7 +12,7 @@
         closeDuration: 30 * 60 * 1000, // 30분 (ms) A*B*C A:분(*B:초*C:밀리초)
         title: '⚠️ 사이트 개발 중입니다',
         description: '버그나 오류가 있으면 언제든지 ',
-        descriptionEnd: '로 문의해주세요!',
+        descriptionEnd: '로 문의해주세요! 빠르게 수정하겠습니다.',
         icon: '🐛'
     };
 

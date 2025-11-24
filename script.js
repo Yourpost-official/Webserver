@@ -215,7 +215,8 @@ if ('IntersectionObserver' in window) {
 console.log('%c💌 Yourpost', 'font-size: 32px; font-weight: bold; color: #1a2f4a;');
 console.log('%c편지로 전하는 마음', 'font-size: 16px; color: #6B6B6B;');
 console.log('\n개발자 도구를 열어주셔서 감사합니다!');
-console.log('문의: contact@yourpost.co.kr');
+console.log('문의: admin@yourpost.co.kr');
+console.log('관리담당자: doohyun sung');
 
 // ===== INITIALIZE =====
 
