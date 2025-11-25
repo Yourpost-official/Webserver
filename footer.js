@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const isBusiness = currentUrl.includes('/business');
     const isOndaypost = currentUrl.includes('/ondaypost');
     const isChristmasCard = currentUrl.includes('/christmascard');
+    //
     //IR,협업문의,비즈니스 --> 추후 /business 로 변경요망
     // 푸터 HTML 생성
     const footerHTML = `
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h4>Yourpost</h4>
                 <p>더 멀리, 더 가까이</p>
                 <p class="footer-desc">마음을 전하는 다양한 방법을 제공합니다</p>
-                <a href="/" title="협업/채용/투자 페이지로 이동">IR</a> 
+                <a href="/business" title="협업/채용/투자 페이지로 이동">IR</a> 
                 <a href="/" title="협업/채용/투자 페이지로 이동">협업문의</a> 
             </div>
             
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-section">
                 <h4>Services</h4>
                 <a href="/ondaypost/" title="하루편지 페이지로 이동">하루편지</a>
-                <a href="/christmascard/" title="크리스마스 말씀 페이지로 이동">크리스마스 말씀</a>
                 <a href="/#services" title="전체 서비스 보기">전체 서비스</a>
             </div>
             
