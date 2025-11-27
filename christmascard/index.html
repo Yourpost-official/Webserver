@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>크리스마스 말씀엽서</title>
-    <meta name="description" content="크리스마스 시즌, 성경의 말씀을 담은 따뜻한 엽서">
+    <title>크리스마스 엽서 - Yourpost</title>
+    <meta name="description" content="따뜻한 크리스마스 엽서, 손글씨 편지, 대필 서비스 - 사랑하는 이에게 마음을 전하세요">
     <link rel="stylesheet" href="../christmascard-style.css">
-    <!-- 메인 홈페이지 (index.html) -->
-    <meta property="og:title" content="Yourpost | 크리스마스 말씀엽서 ">
-    <meta property="og:description" content="설레는 크리스마스 말씀을 사랑하는사람들과 함께 나눠보세요!">
-    <meta property="og:image" content="https://yourpost.co.kr/images/christmascard_banner.png">
+    <meta property="og:title" content="Yourpost | 크리스마스 엽서">
+    <meta property="og:description" content="사랑하는 이들과 함께 나누는 따뜻한 크리스마스 엽서">
     <meta property="og:url" content="https://yourpost.co.kr/christmascard/">
 </head>
+
 <body>
     <header>
         <nav>
             <a href="../" class="logo" title="유어포스트 홈으로">
-                <img src="../logo.png" alt="크리스마스 말씀">
+                <img src="../logo.png" alt="크리스마스 엽서">
                 <span>유어포스트</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home'); return false;">홈</a></li>
                 <li><a href="#" onclick="showPage('about'); return false;">소개</a></li>
+                <li><a href="#" onclick="showPage('service'); return false;">서비스</a></li>
                 <li><a href="#" onclick="showPage('apply'); return false;">신청</a></li>
+                <li><a href="#" onclick="showPage('bulk'); return false;">단체/B2B</a></li>
                 <li><a href="../" target="_self">← Yourpost 홈</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
@@ -37,121 +39,57 @@
     <main id="home" class="active">
         <section class="hero">
             <div class="hero-content">
-                <h1>설레는 크리스마스로</h1>
+                <h1>따뜻한 크리스마스로</h1>
                 <p class="hero-subtitle">
-                    예수님의 말씀으로 찾는 크리스마스의 의미<br>
-                    사랑하는 이들과 함께 나누세요
+                    마음이 담긴 엽서로 사랑하는 이들과<br>
+                    크리스마스 엽서를 통해 마음를 나누세요
                 </p>
                 <div class="hero-buttons">
-                    <a href="#" onclick="showPage('apply'); return false;" class="btn btn-primary">지금 신청하기</a>
-                    <a href="#" onclick="showPage('about'); return false;" class="btn btn-secondary">더 알아보기</a>
+                    <a href="#" onclick="showPage('service'); return false;" class="btn btn-primary">서비스 보기</a>
+                    <a href="#" onclick="showPage('apply'); return false;" class="btn btn-secondary">지금 신청하기</a>
                 </div>
             </div>
         </section>
 
-<!-- 크리스마스 홈페이지 </main> 닫히기 전에 추가 -->
-
-<!-- 신청안내 섹션 -->
-<section class="registration-section">
-    <div class="container">
-        <h2 class="section-title">신청 안내</h2>
-
-        <div class="registration-tabs">
-            <button class="tab-btn active" onclick="switchTab('individual')">
-                <span class="tab-icon">👤</span>
-                <span class="tab-text">일반 신청</span>
-            </button>
-            <button class="tab-btn" onclick="switchTab('bulk')">
-                <span class="tab-icon">👥</span>
-                <span class="tab-text">단체 문의</span>
-            </button>
-        </div>
-
-        <!-- 일반 신청 탭 -->
-        <div id="individual" class="tab-content active">
-            <div class="registration-content">
-                <h3>개인 신청</h3>
-                <p class="description">아래 신청 버튼을 클릭하여 개인 신청을 진행하세요.</p>
-
-                <div class="form-embed">
-                    <!-- Google Form 임베드 또는 Typeform 임베드 -->
-<iframe data-tally-src="https://tally.so/embed/0QQGxA?transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
-    loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0"
-    title="크리스마스 말씀엽서 신청">
-                    </iframe>
-                </div>
-
-                <p class="form-info">
-                    📧 더 자세한 정보는 <a href="mailto:christmas@yourpost.co.kr">christmas@yourpost.co.kr</a>로 문의하세요.
-                </p>
-            </div>
-        </div>
-
-        <!-- 단체 문의 탭 -->
-        <div id="bulk" class="tab-content">
-            <div class="registration-content">
-                <h3>단체 신청 / 대량 주문</h3>
-                <p class="description">기업, 단체, 교회 등에서 대량 주문하실 경우 아래로 문의하세요.</p>
-
-                <div class="bulk-inquiry-box">
-                    <div class="inquiry-item">
-                        <h4>✉️ 이메일 문의</h4>
-                        <p>가장 빠르고 정확한 상담을 원하신다면</p>
-                        <a href="mailto:christmas@yourpost.co.kr" class="btn btn-primary">
-                            📧 이메일로 문의하기
-                        </a>
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">우리의 엽서</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">💌</div>
+                        <h3>크리스마스 엽서</h3>
+                        <p>당신의 메시지를 엽서에 담아<br>발송되는 가장 간편한 선택</p>
                     </div>
-
-                    <!-- <div class="inquiry-item">
-                        <h4>☎️ 전화 상담</h4>
-                        <p>직접 상담을 원하신다면</p>
-                        <a href="tel:010-0000-0000" class="btn btn-primary">
-                            📞 전화로 상담받기
-                        </a>
-                    </div> -->
-
-                    <div class="inquiry-item">
-                        <h4>💬 카톡 상담</h4>
-                        <p>편하게 메시지로 상담받고 싶다면</p>
-                        <a href="https://open.kakao.com/o/sTa8ml3h" target="_blank" class="btn btn-primary">
-                            💬 카톡으로 문의하기
-                        </a>
+                    <div class="feature-item">
+                        <div class="feature-icon">✍️</div>
+                        <h3>손글씨 편지지</h3>
+                        <p>직접 손으로 쓴 따뜻한 편지<br>아날로그 감성을 담은 특별한 선물</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <h3>대필 서비스</h3>
+                        <p>시간이 없다면? 키워드만 주세요<br>저희가 작성해드립니다</p>
                     </div>
                 </div>
-
-                <!-- <div class="bulk-info">
-                    <h4>단체 신청 시 안내</h4>
-                    <ul>
-                        <li>✓ 10세트 이상: 10% 할인 적용</li>
-                        <li>✓ 30세트 이상: 15% 할인 + 맞춤 패키징</li>
-                        <li>✓ 50세트 이상: 20% 할인 + 배송료 협의</li>
-                        <li>✓ 100세트 이상: 별도 견적</li>
-                        <li>✓ 배송 10일 전 상담 완료요망</li>
-                    </ul>
-                </div> -->
             </div>
-        </div>
-    </div>
-</section>
-
-
-
+        </section>
     </main>
 
     <!-- ABOUT -->
     <main id="about">
         <section class="about-hero">
             <div class="container">
-                <h1>크리스마스 말씀엽서</h1>
-                <p>성탄의 진정한 의미를 나누다</p>
+                <h1>크리스마스 엽서</h1>
+                <p>디지털 시대, 손글씨로 전하는 따뜻한 마음</p>
             </div>
         </section>
 
         <section class="content-section">
             <div class="container">
                 <div class="about-text">
-                    <p>크리스마스는 예수님께서 이땅에 오심을 기념하는날입니다.<br> 선물 주고받는 것도 좋지만, 성경의 말씀을 통해 성탄의 참된 의미를 되새기는 것이 가장 중요합니다.</p>
-                    <p>우리는 성경의 따뜻한 말씀을 담은 엽서로 사랑하는 이들과 하나님의 축복을 나누고자 합니다.<br> 실제 우편으로 배송되는 엽서를 통해 디지털 시대 속 따뜻한 감성을 전달합니다.</p>
+                    <p>바쁜 일상 속에서 사랑하는 이에게 마음을 전하고 싶지만 어떻게 표현해야 할지 모를 때가 있습니다.</p>
+                    <p>유어포스트의 크리스마스 엽서는 당신의 진심을 담아 전달되는 따뜻한 편지입니다.<br>크리스마스 엽서, 손글씨 편지, 대필 서비스까지 다양한 방식으로 선택할 수
+                        있습니다.</p>
                 </div>
             </div>
         </section>
@@ -160,100 +98,87 @@
             <div class="container">
                 <h2 class="section-title">이런 분들을 위해</h2>
                 <div class="who-grid">
-                    <!-- <div class="who-item">
-                        <h3>💚 영적 위로를 찾는 분</h3>
-                        <p>마음의 평안과 영적 위로를 받고 싶으신 분</p>
-                    </div> -->
                     <div class="who-item">
-                        <h3>복음을 전하고 싶은 분</h3>
-                        <p>가족, 친구에게 소중한 복음을<br> 전하고 싶으신 분</p>
+                        <h3>빠르고 간편하게</h3>
+                        <p>시간이 부족한데 마음은<br>꼭 전하고 싶으신 분</p>
                     </div>
                     <div class="who-item">
-                        <h3>의미 있는 선물을 찾는 분</h3>
-                        <p>마음이 담긴 특별한<br> 크리스마스 선물을 원하시는 분</p>
+                        <h3>정성 있는 선물을 원하시는 분</h3>
+                        <p>마음과 감성이 담긴<br>특별한 선물을 찾으시는 분</p>
                     </div>
                     <div class="who-item">
-                        <h3>편지와 함깨 보내는<br> 말씀엽서</h3>
-                        <p>편지와 함깨 의미있는<br> 선물을 원하시는 분</p>
+                        <h3>손글씨의 온기를 원하시는 분</h3>
+                        <p>디지털 시대 속<br>아날로그 감정을 전하고 싶은 분</p>
                     </div>
                 </div>
             </div>
         </section>
-            <section class="process-section">
+
+        <section class="process-section">
             <div class="container">
-                <h2 class="section-title">어떻게 진행되나요</h2>
+                <h2 class="section-title">서비스 진행 과정</h2>
                 <div class="process-steps">
                     <div class="process-step">
                         <div class="step-num">1</div>
+                        <h3>선택</h3>
+                        <p>서비스 종류 선택</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">2</div>
                         <h3>신청</h3>
                         <p>기본 정보 입력</p>
                     </div>
                     <div class="process-step">
-                        <div class="step-num">2</div>
-                        <h3>선택</h3>
-                        <p>옵션 및 종류 설정</p>
-                    </div>
-                    <div class="process-step">
                         <div class="step-num">3</div>
-                        <h3>제작</h3>
-                        <p>엽서및 스티커 제작</p>
+                        <h3>작성</h3>
+                        <p>메시지 또는 키워드 입력</p>
                     </div>
                     <div class="process-step">
                         <div class="step-num">4</div>
-                        <h3>발송</h3>
-                        <p>크리스마스 엽서 발송</p>
+                        <h3>제작</h3>
+                        <p>엽서/편지 제작</p>
                     </div>
                     <div class="process-step">
                         <div class="step-num">5</div>
-                        <h3>도착</h3>
-                        <p>우편함을 통해 수령받기</p>
+                        <h3>발송</h3>
+                        <p>우편으로 배송</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- FAQ 섹션 -->
+
         <section class="faq-section">
             <div class="container">
                 <h2 class="section-title">자주 묻는 질문</h2>
-
                 <div class="faq-list">
                     <div class="faq-item">
                         <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Q. 배송은 언제부터 가능한가요?</h3>
+                            <h3>Q. 크리스마스 엽서와 손글씨 편지지의 차이점은?</h3>
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-content">
-                            <p>크리스마스 시즌에 맞춰 12월 중순부터 배송됩니다. 정확한 배송 일정은 공지사항과 이메일을 참고해주세요.</p>
+                            <p><strong>크리스마스 엽서:</strong> 당신의 메시지를 엽서 뒷면에 인쇄하여 발송. 빠르고 간편합니다.<br><strong>손글씨 편지지:</strong>
+                                편지지와 봉투를 받아 직접 작성한 후 반송. 더 정성 있는 선택입니다.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Q. 구매 최소 수량이 있나요?</h3>
+                            <h3>Q. 대필 서비스는 어떻게 진행되나요?</h3>
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-content">
-                            <p>개인 구매는 최소 1세트부터 가능합니다. 대량 주문(10세트 이상)의 경우 별도 할인이 적용됩니다.</p>
+                            <p>받는 분의 관계와 키워드 3개만 알려주세요. 저희가 크리스마스의 감성을 담아 예쁜 손글씨로 메시지를 작성하고 최종 검수 후 발송합니다.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Q. 맞춤형 편지는 어떻게 작성되나요?</h3>
+                            <h3>Q. 배송은 언제 가능한가요?</h3>
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-content">
-                            <p>주문 시 받는 분의 정보와 전하고 싶은 편지내용을 알려주시면, 저희 팀에서 크리스마스의 감성을 담은 편지지에 인쇄하여 드립니다.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Q. 단체/기업 선물로도 가능한가요?</h3>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-content">
-                            <p>네, 물론 가능합니다! 기업이나 단체에서 직원/멤버분들께 선물하시기에 좋습니다. 아래 대량 주문 안내 섹션을 참고해주세요.</p>
+                            <p>크리스마스 시즌에 맞춰 12월 중순부터 배송됩니다. 정확한 배송 일정은 신청 시 안내드립니다.</p>
                         </div>
                     </div>
 
@@ -263,112 +188,113 @@
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-content">
-                            <p>배송료 포함된 가격입니다. 단.도서산간 배송이 어려운지역은 배송비가 추가로 발생할수있습니다</p>
+                            <p>배송료는 가격에 포함되어 있습니다. 단, 도서산간 지역은 추가 배송비가 발생할 수 있습니다.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Q. 환불이나 취소는 가능한가요?</h3>
+                            <h3>Q. 환불/취소가 가능한가요?</h3>
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-content">
-                            <p>상품준비전까지는 환불,취소가 가능하나 제작후에는 환불이 어렵습니다</p>
+                            <p>상품 제작 전까지는 환불·취소가 가능합니다. 제작 후에는 환불이 어려우니 참고 부탁드립니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- 대량 주문 안내 섹션 -->
-        <section class="bulk-order-section">
-            <div class="container">
-                <h2 class="section-title">대량 주문 안내</h2>
-
-                <!-- 혜택 -->
-                <div class="bulk-grid">
-                    <div class="bulk-card">
-                        <h3 class="bulk-card-title">🎁 대량 주문 혜택</h3>
-                        <ul class="bulk-list">
-                            <li>✓ 10세트 이상: 10% 할인</li>
-                            <li>✓ 30세트 이상: 15% 할인</li>
-                            <li>✓ 50세트 이상: 20% 할인 + 배송료 협의</li>
-                            <li>✓ 100세트 이상: 별도 견적</li>
-                            <li>✓ 맞춤 패키징 및 인사말 가능</li>
-                        </ul>
-                    </div>
-
-                    <!-- 추천 대상 -->
-                    <div class="bulk-card">
-                        <h3 class="bulk-card-title">👥 추천 대상</h3>
-                        <ul class="bulk-list">
-                            <li>✓ 기업/기관 직원 선물</li>
-                            <li>✓ 교회/부서 크리스마스 선물</li>
-                            <li>✓ 학교/학급 크리스마스 선물</li>
-                            <li>✓ 연말/연시 전도용 선물</li>
-                        </ul>
-                    </div>
-
-                    <!-- 프로세스 -->
-                    <div class="bulk-card">
-                        <h3 class="bulk-card-title">📋 주문 프로세스</h3>
-                        <ol class="bulk-list">
-                            <li>상담 및 견적 요청</li>
-                            <li>수량 및 요구사항 확인</li>
-                            <li>최종 견적서 제시</li>
-                            <li>계약 및 선금</li>
-                            <li>제작 및 배송</li>
-                            <li>완료</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <!-- 문의 CTA -->
-                <div class="bulk-cta">
-                    <h3>대량 주문 상담이 필요하신가요?</h3>
-                    <p>10세트 이상의 주문은 별도 할인이 적용됩니다.<br>아래 연락처로 편하게 문의주세요.</p>
-                    <div class="cta-buttons">
-                        <a href="mailto:christmas@yourpost.co.kr" class="btn btn-primary">이메일로 문의</a>
-                        <a href="tel:010-0000-0000" class="btn btn-secondary">전화로 상담</a>
-                    </div>
-                    <p class="business-hours">평일 15:30 - 19:00 (주말 12:00-13:00)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 주의사항 -->
-        <section class="notice-section">
-            <div class="container">
-                <h3 class="notice-title">⚠️ 주의사항</h3>
-                <ul class="notice-list">
-                    <li>크리스마스 시즌 특성상 마감 기한이 있으니 서둘러 주문해주세요.</li>
-                    <li>대량 주문은 최소 10일 전에 상담을 완료해야 배송이 가능합니다.</li>
-                    <li>인쇄발주로 인해 추가 일정이 필요할 수 있습니다.</li>
-                </ul>
-            </div>
-        </section>
-
-
     </main>
 
-    <!-- APPLY -->
+    <!-- SERVICE -->
+    <main id="service">
+        <section class="about-hero">
+            <div class="container">
+                <h1>서비스 안내</h1>
+                <p>당신에게 맞는 선택지를 찾아보세요</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="bulk-order-section" style="padding: 0; background: transparent;">
+                    <h2 class="section-title">3가지 서비스</h2>
+
+                    <div class="bulk-grid">
+                        <!-- 크리스마스 엽서 -->
+                        <div class="bulk-card">
+                            <h3 class="bulk-card-title">💌 크리스마스 엽서</h3>
+                            <ul class="bulk-list">
+                                <li>✓ 당신의 메시지 + 엽서 뒷면 인쇄</li>
+                                <li>✓ 우편으로 직접 발송</li>
+                                <li>✓ 가장 빠르고 간편한 선택</li>
+                                <li>✓ 크리스마스 디자인 패키징</li>
+                            </ul>
+                        </div>
+
+                        <!-- 손글씨 편지지 -->
+                        <div class="bulk-card">
+                            <h3 class="bulk-card-title">✍️ 손글씨 편지지</h3>
+                            <ul class="bulk-list">
+                                <li>✓ 편지지 + 봉투 세트 제공</li>
+                                <li>✓ 당신이 직접 손글씨로 작성</li>
+                                <li>✓ 우리가 포장 후 최종 발송</li>
+                                <li>✓ 가장 정성 있는 선택</li>
+                            </ul>
+                        </div>
+
+                        <!-- 대필 서비스 -->
+                        <div class="bulk-card">
+                            <h3 class="bulk-card-title">✨ 대필 서비스 (옵션)</h3>
+                            <ul class="bulk-list">
+                                <li>✓ 키워드 3개만 입력</li>
+                                <li>✓ 전문가가 예쁜 손글씨로 작성</li>
+                                <li>✓ 최종 검수 후 승인</li>
+                                <li>✓ 크리스마스 엽서/편지지에 추가 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bulk-cta" style="margin-top: 60px;">
+                        <h3>지금 바로 시작하세요</h3>
+                        <p>크리스마스의 따뜻한 마음을 전하세요</p>
+                        <div class="cta-buttons">
+                            <a href="#" onclick="showPage('apply'); return false;" class="btn btn-primary">개인 신청하기</a>
+                            <a href="#" onclick="showPage('bulk'); return false;" class="btn btn-secondary">단체/B2B
+                                문의</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- APPLY (개인 신청) -->
     <main id="apply">
         <section class="about-hero">
             <div class="container">
-                <h1>크리스마스 말씀엽서 신청</h1>
-                <p>크리스마스를 기념해 제작된 엽서를 받아보세요</p>
-                <h3>교회,부서등에서 신청하시는경우 christmas@yourpost.co.kr 로 문의부탁드립니다!</h3>
+                <h1>크리스마스 엽서 신청</h1>
+                <p>따뜻한 마음을 전하세요</p>
             </div>
         </section>
 
         <section class="form-section">
             <div class="container">
-                <div class="form-wrapper">
-                    <iframe data-tally-src="https://tally.so/embed/0QQGxA?transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0" title="크리스마스 말씀엽서 신청"></iframe>
-                </div>
+                <div class="registration-content">
+                    <h3>개인 신청</h3>
+                    <p class="description">아래 신청 양식을 작성하여 신청해주세요. 크리스마스에 맞춰 정성 있게 제작하여 발송하겠습니다.</p>
+
+                    <div class="form-embed">
+                        <iframe
+                            data-tally-src="https://tally.so/embed/0QQGxA?transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+                            loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0"
+                            title="크리스마스 엽서 신청"></iframe>
+                    </div>
+
                     <p class="form-info">
                         📧 더 자세한 정보는 <a href="mailto:christmas@yourpost.co.kr">christmas@yourpost.co.kr</a>로 문의하세요.
                     </p>
+                </div>
             </div>
         </section>
 
@@ -377,18 +303,129 @@
                 <h2 class="section-title">신청자 혜택</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <h3>🎄 크리스마스 테마 엽서</h3>
-                        <p>정성스럽게 디자인된 <br> 크리스마스 말씀엽서를 <br>받으실 수 있습니다</p>
+                        <h3>🎄 크리스마스 엽서</h3>
+                        <p>정성스럽게 디자인된<br>크리스마스 엽서를<br>받으실 수 있습니다</p>
                     </div>
                     <div class="benefit-item">
-                        <h3>✨크리스마스 스티커</h3>
-                        <p>크리스마스를 기념해 특별제작된 <br> 말씀스티커를 받으실수있습니다</p>
+                        <h3>✨ 크리스마스 스티커</h3>
+                        <p>크리스마스를 기념해<br>특별 제작된 스티커를<br>받으실 수 있습니다</p>
                     </div>
                     <div class="benefit-item">
-                        <h3>크리스마스 편지</h3>
-                        <p>편지 내용을 적어주시면 <br> 저희가 편지까지 같이 발송해드립니다</p>
+                        <h3>🎁 특별 패키징</h3>
+                        <p>마음이 담긴<br>특별한 포장으로<br>즐거움이 배로 됩니다</p>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BULK (단체/B2B) -->
+    <main id="bulk">
+        <section class="about-hero">
+            <div class="container">
+                <h1>단체 · B2B 문의</h1>
+                <p>기업, 단체, 교회를 위한 맞춤형 서비스</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="registration-content">
+                    <h3>단체/대량 주문 안내</h3>
+                    <p class="description">10세트 이상의 주문은 특별 할인과 맞춤형 서비스를 제공합니다. 아래의 방식으로 문의주세요.</p>
+
+                    <div class="bulk-inquiry-box">
+                        <div class="inquiry-item">
+                            <h4>📧 이메일 문의</h4>
+                            <p>가장 정확한 상담을<br>원하신다면</p>
+                            <a href="mailto:christmas@yourpost.co.kr" class="btn btn-primary">이메일 보내기</a>
+                        </div>
+
+                        <div class="inquiry-item">
+                            <h4>💬 카톡 상담</h4>
+                            <p>편하게 메시지로<br>상담받고 싶다면</p>
+                            <a href="https://open.kakao.com/o/sTa8ml3h" target="_blank" class="btn btn-primary">카톡
+                                문의</a>
+                        </div>
+
+                        <div class="inquiry-item">
+                            <h4>☎️ 전화 상담</h4>
+                            <p>직접 통화로<br>상담받고 싶다면</p>
+                            <a href="tel:010-0000-0000" class="btn btn-primary">전화 연결</a>
+                        </div>
+                    </div>
+
+                    <div class="bulk-info">
+                        <h4>대량 주문 시 혜택</h4>
+                        <ul>
+                            <li>✓ 10세트 이상: 10% 할인</li>
+                            <li>✓ 30세트 이상: 15% 할인 + 맞춤 패키징</li>
+                            <li>✓ 50세트 이상: 20% 할인 + 배송료 협의</li>
+                            <li>✓ 100세트 이상: 별도 견적</li>
+                            <li>✓ 디자인 수정및 추가가능</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bulk-order-section">
+            <div class="container">
+                <h2 class="section-title">추천 대상</h2>
+
+                <div class="bulk-grid">
+                    <div class="bulk-card">
+                        <h3 class="bulk-card-title">🏢 기업/기관</h3>
+                        <ul class="bulk-list">
+                            <li>✓ 임직원 크리스마스 선물</li>
+                            <li>✓ 거래처 감사 인사</li>
+                            <li>✓ 연말 고객 선물</li>
+                            <li>✓ 회사 로고 삽입 가능</li>
+                        </ul>
+                    </div>
+
+                    <div class="bulk-card">
+                        <h3 class="bulk-card-title">⛪ 교회/부서</h3>
+                        <ul class="bulk-list">
+                            <li>✓ 성도 크리스마스 선물</li>
+                            <li>✓ 전도용 선물</li>
+                            <li>✓ 부서별 소그룹 선물</li>
+                            <li>✓ 메시지 커스터마이징가능</li>
+                        </ul>
+                    </div>
+
+                    <div class="bulk-card">
+                        <h3 class="bulk-card-title">🎓 학교/개인</h3>
+                        <ul class="bulk-list">
+                            <li>✓ 학급 크리스마스 선물</li>
+                            <li>✓ 동아리 그룹 선물</li>
+                            <li>✓ 학생 장학 선물</li>
+                            <li>✓ 학교 로고 활용 가능</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bulk-cta">
+                    <h3>대량 주문 상담을 원하신가요?</h3>
+                    <p>10세트 이상의 주문은 특별 할인이 적용됩니다.<br>아래 연락처로 편하게 문의주세요.</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:christmas@yourpost.co.kr" class="btn btn-primary">이메일로 문의</a>
+                        <a href="https://open.kakao.com/o/sTa8ml3h" target="_blank" class="btn btn-secondary">카톡 상담</a>
+                    </div>
+                    <p class="business-hours">평일 09:00 - 18:00 (점심시간 12:00-13:00 제외)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice-section">
+            <div class="container">
+                <h3 class="notice-title">⚠️ 중요한 안내</h3>
+                <ul class="notice-list">
+                    <li>크리스마스 시즌 특성상 마감 기한이 있습니다. 서둘러 문의주세요.</li>
+                    <li>대량 주문은 최소 10일 전에 상담을 완료해야 배송이 가능합니다.</li>
+                    <li>인쇄 발주로 인해 추가 일정이 필요할 수 있습니다.</li>
+                    <li>맞춤형 패키징은 별도 요청 사항으로 협의 후 진행됩니다.</li>
+                </ul>
             </div>
         </section>
     </main>
@@ -397,66 +434,84 @@
 
     <script src="../script.js"></script>
     <script src="../footer.js"></script>
-    
+
     <script>
         function toggleFaq(element) {
-                const item = element.parentElement;
-                const content = item.querySelector('.faq-content');
-                const toggle = element.querySelector('.faq-toggle');
+            const item = element.parentElement;
+            const isOpen = item.classList.contains('active');
 
-                const isOpen = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+            });
 
-                // 모든 FAQ 닫기
-                document.querySelectorAll('.faq-item').forEach(el => {
-                    el.classList.remove('active');
-                });
-
-                // 클릭한 항목만 열기
-                if (!isOpen) {
-                    item.classList.add('active');
-                }
+            if (!isOpen) {
+                item.classList.add('active');
             }
+        }
+
         function showPage(pageId) {
             const pages = document.querySelectorAll('main');
             pages.forEach(p => p.classList.remove('active'));
-            
+
             const target = document.getElementById(pageId);
             if (target) {
                 target.classList.add('active');
                 window.scrollTo(0, 0);
             }
-            
+
             const menu = document.getElementById('navLinks');
             const toggle = document.getElementById('menuToggle');
             if (menu) menu.classList.remove('active');
             if (toggle) toggle.classList.remove('active');
         }
 
-        document.getElementById('menuToggle')?.addEventListener('click', function() {
+        document.getElementById('menuToggle')?.addEventListener('click', function () {
             const navLinks = document.getElementById('navLinks');
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-        function switchTab(tabName) {
-                // 모든 탭 콘텐츠 숨기기
-                const tabContents = document.querySelectorAll('.tab-content');
-                tabContents.forEach(content => {
-                    content.classList.remove('active');
-                });
 
-                // 모든 버튼 비활성화
-                const tabButtons = document.querySelectorAll('.tab-btn');
-                tabButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                // 선택된 탭 활성화
-                document.getElementById(tabName).classList.add('active');
-                event.target.closest('.tab-btn').classList.add('active');
-            }
-
-        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }
     </script>
     <script src="../js/bug-banner.js"></script>
+        <script>
+            function toggleFaq(element) {
+                const item = element.parentElement;
+                const isOpen = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    el.classList.remove('active');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            }
+
+            function showPage(pageId) {
+                const pages = document.querySelectorAll('main');
+                pages.forEach(p => p.classList.remove('active'));
+
+                const target = document.getElementById(pageId);
+                if (target) {
+                    target.classList.add('active');
+                    window.scrollTo(0, 0);
+                }
+
+                const menu = document.getElementById('navLinks');
+                const toggle = document.getElementById('menuToggle');
+                if (menu) menu.classList.remove('active');
+                if (toggle) toggle.classList.remove('active');
+            }
+
+            document.getElementById('menuToggle')?.addEventListener('click', function () {
+                const navLinks = document.getElementById('navLinks');
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }
+        </script>
 </body>
+
 </html>

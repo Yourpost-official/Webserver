@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-section">
                 <h4>Services</h4>
                 <a href="/ondaypost/" title="하루편지 페이지로 이동">하루편지</a>
+                <a href="/christmascard/" title="크리스마스 엽서 신청하러가기">크리스마스 엽서</a>
                 <a href="/#services" title="전체 서비스 보기">전체 서비스</a>
             </div>
             
