@@ -1,272 +1,291 @@
-// ===== PAGE NAVIGATION =====
+/* ===================================
+   Yourpost Global Navigation Script
+   전역 사용 - 페이지 네비게이션 및 인터랙션
+   파일: /script.js
+   =================================== */
 
-let isTransitioning = false;
+(function () {
+    'use strict';
 
-// 글로벌 스코프에 함수 등록
-window.showPage = function(pageId) {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    
-    const currentPage = document.querySelector('main.active');
-    const targetPage = document.getElementById(pageId);
-    
-    if (currentPage === targetPage) {
-        isTransitioning = false;
-        return;
-    }
-    
-    // Smooth fade out
-    if (currentPage) {
-        currentPage.style.transition = 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-        currentPage.style.opacity = '0';
-        
+    // ===== 페이지 네비게이션 시스템 =====
+    let isTransitioning = false;
+
+    window.showPage = function (pageId) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const pages = document.querySelectorAll('main');
+        const currentPage = document.querySelector('main.active');
+        const targetPage = document.getElementById(pageId);
+
+        if (!targetPage || currentPage === targetPage) {
+            isTransitioning = false;
+            return;
+        }
+
+        // 현재 페이지 페이드 아웃
+        if (currentPage) {
+            currentPage.style.opacity = '0';
+            currentPage.style.transition = 'opacity 0.3s ease';
+
+            setTimeout(() => {
+                currentPage.classList.remove('active');
+                currentPage.style.opacity = '';
+            }, 300);
+        }
+
+        // 새 페이지 페이드 인
         setTimeout(() => {
-            currentPage.classList.remove('active');
-            currentPage.style.display = 'none';
-        }, 400);
-    }
-    
-    // Smooth fade in
-    setTimeout(() => {
-        if (targetPage) {
-            targetPage.style.display = 'block';
-            targetPage.style.opacity = '0';
             targetPage.classList.add('active');
-            
+            targetPage.style.opacity = '0';
+
             requestAnimationFrame(() => {
-                targetPage.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                targetPage.style.transition = 'opacity 0.4s ease';
                 targetPage.style.opacity = '1';
             });
-        }
-        
-        isTransitioning = false;
-    }, 450);
-    
-    // Close mobile menu
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (menuToggle && navLinks) {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    // Smooth scroll to top
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
 
-// ===== MOBILE MENU =====
+            // 스크롤 최상단으로
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function(e) {
+            // 모바일 메뉴 닫기
+            closeMobileMenu();
+
+            isTransitioning = false;
+        }, 350);
+    };
+
+    // ===== 모바일 메뉴 =====
+    function initMobileMenu() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (!menuToggle || !navLinks) return;
+
+        // 햄버거 버튼 클릭
+        menuToggle.addEventListener('click', function (e) {
             e.stopPropagation();
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
-            document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        document.addEventListener('click', function(e) {
-            if (navLinks.classList.contains('active') && 
-                !menuToggle.contains(e.target) && 
-                !navLinks.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+
+            // body 스크롤 제어
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
                 document.body.style.overflow = '';
             }
         });
+
+        // 링크 클릭 시 메뉴 닫기
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // 메뉴 외부 클릭 시 닫기
+        document.addEventListener('click', function (e) {
+            if (navLinks.classList.contains('active') &&
+                !menuToggle.contains(e.target) &&
+                !navLinks.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
     }
-});
 
-// ===== HEADER SCROLL EFFECT =====
-
-const header = document.querySelector('header');
-let lastScroll = 0;
-
-if (header) {
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
-    }, { passive: true });
-}
-
-// ===== SMOOTH SCROLL FOR ANCHORS =====
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#' || !href.startsWith('#')) return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-            const headerHeight = header ? header.offsetHeight : 60;
-            const targetPosition = target.offsetTop - headerHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ===== INTERSECTION OBSERVER =====
-
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-window.addEventListener('load', () => {
-    const animateElements = document.querySelectorAll(
-        '.feature-item, .who-item, .process-step, .benefit-item'
-    );
-    
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(40px)';
-        el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        observer.observe(el);
-    });
-});
-
-// ===== KEYBOARD NAVIGATION =====
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
+    function closeMobileMenu() {
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-        if (menuToggle && navLinks && navLinks.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+
+        if (menuToggle) menuToggle.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('active');
+        document.body.style.overflow = '';
     }
-});
 
-// ===== PERFORMANCE OPTIMIZATION =====
+    // ===== 헤더 스크롤 효과 =====
+    function initHeaderScroll() {
+        const header = document.querySelector('header');
+        if (!header) return;
 
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+        let lastScroll = 0;
+        let ticking = false;
 
-// ===== LAZY LOADING =====
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    const currentScroll = window.pageYOffset;
 
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
+                    if (currentScroll > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+
+                    lastScroll = currentScroll;
+                    ticking = false;
+                });
+
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    // ===== 부드러운 스크롤 앵커 =====
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+
+                // 페이지 네비게이션이 아닌 경우에만 스크롤
+                if (href === '#' || !href.startsWith('#')) return;
+
+                e.preventDefault();
+
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header')?.offsetHeight || 70;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
+            });
+        });
+    }
+
+    // ===== Intersection Observer (요소 등장 애니메이션) =====
+    function initIntersectionObserver() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // 애니메이션 대상 요소
+        const animateElements = document.querySelectorAll(
+            '.feature-card, .service-tile, .who-card, .benefit-card, .step'
+        );
+
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    }
+
+    // ===== 키보드 네비게이션 =====
+    function initKeyboardNav() {
+        document.addEventListener('keydown', function (e) {
+            // ESC 키로 모바일 메뉴 닫기
+            if (e.key === 'Escape') {
+                closeMobileMenu();
             }
         });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// ===== CONSOLE BRANDING =====
-
-console.log('%c💌 Yourpost', 'font-size: 32px; font-weight: bold; color: #1a2f4a;');
-console.log('%c편지로 전하는 마음', 'font-size: 16px; color: #6B6B6B;');
-console.log('\n개발자 도구를 열어주셔서 감사합니다!');
-console.log('문의: admin@yourpost.co.kr');
-console.log('관리담당자: doohyun sung');
-
-// ===== INITIALIZE =====
-
-window.addEventListener('load', () => {
-    document.body.style.opacity = '1';
-});
-
-// Prevent FOUC
-document.body.style.opacity = '0';
-document.body.style.transition = 'opacity 0.3s';
-
-// ===== FOOTER 및 확장성 유틸리티 함수 =====
-
-// 현재 페이지 경로 감지
-function getCurrentPagePath() {
-    return window.location.pathname;
-}
-
-// 현재 페이지가 서브페이지인지 확인
-function isSubpage() {
-    return window.location.pathname.includes('/ondaypost/');
-}
-
-// 기본 경로 가져오기
-function getBasePath() {
-    return isSubpage() ? '../' : './';
-}
-
-// 동적 경로 해석 함수 (향후 서브사이트 확장 시 사용)
-function resolvePath(filePath) {
-    const basePath = getBasePath();
-    // 이미 절대 경로거나 외부 링크면 그대로 반환
-    if (filePath.startsWith('http') || filePath.startsWith('/')) {
-        return filePath;
     }
-    // 상대 경로에 기본 경로 추가
-    if (filePath.startsWith('../')) {
-        return filePath;
-    }
-    return basePath + filePath;
-}
 
-// 페이지 로드 시 디버그 정보 (개발 시 유용)
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('✅ Yourpost System Loaded');
-        console.log('📍 Current Path:', getCurrentPagePath());
-        console.log('🌐 Is Subpage:', isSubpage());
-        console.log('📂 Base Path:', getBasePath());
+    // ===== 터치 스와이프 (모바일 메뉴) =====
+    function initTouchGestures() {
+        const navLinks = document.getElementById('navLinks');
+        if (!navLinks) return;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        navLinks.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        navLinks.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            // 오른쪽으로 스와이프 시 메뉴 닫기
+            if (touchEndX > touchStartX + 50) {
+                closeMobileMenu();
+            }
+        }
     }
-});
-// ===== TALLY FORM LOADER (크리스마스 말씀) =====
-var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+
+    // ===== 성능 최적화: Debounce =====
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // ===== 초기화 =====
+    function init() {
+        // DOM이 준비되었는지 확인
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initAll);
+        } else {
+            initAll();
+        }
+    }
+
+    function initAll() {
+        initMobileMenu();
+        initHeaderScroll();
+        initSmoothScroll();
+        initKeyboardNav();
+        initTouchGestures();
+
+        // Intersection Observer는 약간 지연 후 실행 (성능 최적화)
+        setTimeout(initIntersectionObserver, 100);
+
+        // FOUC 방지
+        document.body.style.opacity = '1';
+
+        // 디버그 로그 (개발 환경)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('✅ Yourpost Navigation System Loaded');
+            console.log('📍 Current Page:', document.querySelector('main.active')?.id || 'None');
+        }
+    }
+
+    // FOUC 방지 초기 설정
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.3s';
+
+    // 전역 노출
+    window.YourpostNav = {
+        version: '2.0.0',
+        showPage: window.showPage,
+        closeMobileMenu: closeMobileMenu
+    };
+
+    // 초기화 실행
+    init();
+
+})();
+
+// ===== 콘솔 브랜딩 =====
+if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    console.log(
+        '%c💌 Yourpost',
+        'font-size: 32px; font-weight: bold; color: #ab2e2c; padding: 10px;'
+    );
+    console.log(
+        '%c편지로 전하는 마음',
+        'font-size: 16px; color: #666; padding: 5px;'
+    );
+}

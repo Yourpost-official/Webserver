@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartSend | Yourpost - 마음을 대신 전하는 편지 발송 서비스</title>
+    <meta name="description" content="직접 쓰기 어려운 편지를 대신 제작하고 발송해드립니다. 고백, 감사, 사과 등 진심을 전하세요.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HeartSend | Yourpost">
+    <meta property="og:description" content="마음을 대신 전하는 편지 발송 서비스">
+    <meta property="og:image" content="https://yourpost.co.kr/images/heartsend_banner.png">
+    <meta property="og:url" content="https://yourpost.co.kr/heartsend/">
+
+    <!-- 전역 CSS -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- 페이지 전용 스타일 -->
+    <style>
+        /* HeartSend 커스텀 그라데이션 */
+        :root {
+            --heartsend-gradient: linear-gradient(135deg, #ab2e2c 0%, #D4A574 100%);
+        }
+
+        /* About Content */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: var(--text-lg);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-6);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-12);
+        }
+
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .content-card {
+            background: var(--bg-base);
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .content-card h3 {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-3);
+            color: var(--primary);
+        }
+
+        .content-card p {
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            max-width: 800px;
+            margin: var(--space-12) auto 0;
+        }
+
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .info-item {
+            background: var(--bg-elevated);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .info-item h3 {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: var(--space-2);
+        }
+
+        .info-item p {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-12);
+        }
+
+        @media (min-width: 640px) {
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .steps {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-circle {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto var(--space-4);
+            background: var(--heartsend-gradient);
+            color: white;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-base);
+        }
+
+        .step:hover .step-circle {
+            transform: scale(1.05) rotate(-5deg);
+        }
+
+        .step h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-2);
+        }
+
+        .step p {
+            font-size: var(--text-base);
+            color: var(--text-tertiary);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Dark Section */
+        .section-dark {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+            color: white;
+        }
+
+        .section-dark h2 {
+            color: white;
+        }
+
+        .vision-items {
+            max-width: 900px;
+            margin: var(--space-12) auto 0;
+        }
+
+        .vision-item {
+            padding: var(--space-6) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .vision-item:last-child {
+            border-bottom: none;
+        }
+
+        .vision-item p {
+            font-size: var(--text-lg);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: var(--leading-relaxed);
+            margin: 0;
+        }
+
+        /* Service Prep Box */
+        .service-prep {
+            text-align: center;
+            padding: var(--space-12);
+            background: var(--bg-elevated);
+            border-radius: var(--radius-2xl);
+            margin: var(--space-8) auto;
+            max-width: 800px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-prep h3 {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .service-prep p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-8);
+            line-height: var(--leading-relaxed);
+        }
+
+        .contact-box {
+            background: var(--bg-base);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--primary);
+            display: inline-block;
+        }
+
+        .contact-box p {
+            font-size: var(--text-base);
+            margin: 0;
+        }
+
+        .contact-email {
+            color: var(--primary);
+            font-weight: 600;
+            transition: color var(--transition-fast);
+        }
+
+        .contact-email:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Background Patterns (2026 트렌드) */
+        .bg-pattern {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(171, 46, 44, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 165, 116, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="../logo.png" alt="HeartSend" class="logo-img">
+                <span>HeartSend</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home'); return false;">홈</a></li>
+                <li><a href="#" onclick="showPage('about'); return false;">소개</a></li>
+                <li><a href="#" onclick="showPage('howto'); return false;">이용방법</a></li>
+                <li><a href="#" onclick="showPage('apply'); return false;">신청</a></li>
+                <li><a href="/">Yourpost</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <main id="home" class="active">
+        <section class="hero bg-pattern">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">HeartSend</h1>
+                <p class="hero-subtitle fade-in">진심을 대신 전달해드립니다</p>
+                <p class="hero-description fade-in">고백, 감사, 사과... 말하지 못한 마음을 편지로</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#" onclick="showPage('apply'); return false;" class="btn btn-primary">지금 신청하기</a>
+                    <a href="#" onclick="showPage('about'); return false;" class="btn btn-secondary">자세히 알아보기</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-pattern">
+            <div class="container">
+                <h2 class="section-heading">HeartSend 특징</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>💌 진심전달</h3>
+                        <p>말로 하기 어려운 마음을 편지로 전달합니다</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>✉️ 실물 발송</h3>
+                        <p>특정 상대에게 실물 편지로 직접 발송합니다</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎭 익명/실명 선택</h3>
+                        <p>발신인 표기 여부를 자유롭게 선택할 수 있습니다</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ABOUT -->
+    <main id="about">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">HeartSend란?</h1>
+                <p class="page-lead">전하고 싶지만 직접 쓰기 어려운 마음을<br>편지로 대신 전달해드리는 서비스입니다</p>
+            </div>
+        </section>
+
+        <section class="bg-pattern">
+            <div class="container">
+                <div class="about-content">
+                    <p>고백하고 싶지만 용기가 나지 않을 때, 감사의 마음을 전하고 싶지만 어색할 때,<br> 사과하고 싶지만 어떻게 표현할지 모를 때.</p>
+                    <p>HeartSend는 당신의 진심을 담아 상대방에게 실물 편지로 전달해드립니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-elevated);">
+            <div class="container">
+                <h2 class="section-heading">이런 분들께 추천해요</h2>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>💕 고백하고 싶은 분</h3>
+                        <p>용기가 필요한 순간<br>편지가 함께합니다</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>🙏 감사를 전하고 싶은 분</h3>
+                        <p>말로 표현하기 어려운<br>깊은 감사의 마음</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>😢 사과하고 싶은 분</h3>
+                        <p>진심 어린 사과를<br>정성스럽게 전달합니다</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-heading">서비스 정보</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>대상</h3>
+                        <p>10~30대</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>유형</h3>
+                        <p>1회성 발송</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>선택 옵션</h3>
+                        <p>익명/실명</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>발송 방법</h3>
+                        <p>우편 배송</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- HOW TO -->
+    <main id="howto">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">이용 방법</h1>
+                <p class="page-lead">간단한 4단계로 마음을 전하세요</p>
+            </div>
+        </section>
+
+        <section class="bg-pattern">
+            <div class="container">
+                <h2 class="section-heading">진행 과정</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-circle">1</div>
+                        <h3>신청</h3>
+                        <p>받는 사람 정보와<br>전할 내용 입력</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">2</div>
+                        <h3>수정</h3>
+                        <p>편지 내용 입력및<br>확인</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">3</div>
+                        <h3>제작</h3>
+                        <p>편지 제작및 <br> 발송준비</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">4</div>
+                        <h3>발송</h3>
+                        <p>최종 확인 후<br>우편 발송</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-dark">
+            <div class="container">
+                <h2 class="section-heading">주의사항</h2>
+                <div class="vision-items">
+                    <div class="vision-item">
+                        <p>모든 내용은 신청자 입력내용 그대로 발송됩니다</p>
+                    </div>
+                    <div class="vision-item">
+                        <p>불법적이거나 타인에게 해를 끼치는 내용은 제작이 거부될 수 있습니다</p>
+                    </div>
+                    <div class="vision-item">
+                        <p>발송 후 내용 변경이나 회수는 불가능합니다</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- APPLY -->
+    <main id="apply">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">HeartSend 신청</h1>
+                <p class="page-lead">당신의 진심을 전해드립니다</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="service-prep">
+                    <h3>서비스 준비 중입니다</h3>
+                    <p>HeartSend는 현재 서비스 준비 중입니다.<br>문의 사항이 있으시다면 아래 이메일로 문의해주세요.</p>
+                    <div class="contact-box">
+                        <p><strong>문의:</strong> <a href="mailto:heartsend@yourpost.co.kr"
+                                class="contact-email">heartsend@yourpost.co.kr</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-elevated);">
+            <div class="container">
+                <h2 class="section-heading">서비스 특징</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>✍️ 실물 제작</h3>
+                        <p>편지로 전하는<br>진심어린 마음</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔒 비밀 보장</h3>
+                        <p>모든 정보는<br>철저히 보호됩니다</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📬 확실한 전달</h3>
+                        <p>우편으로<br>안전하게 배송</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- 전역 스크립트 -->
+    <script src="../script.js"></script>
+    <script src="../footer.js"></script>
+</body>
+
+</html>

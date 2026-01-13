@@ -65,6 +65,10 @@
                         <h3>다시 아날로그로</h3>
                         <p>우편함에 도착하는 실제 편지로 아날로그 감성을 느껴보세요</p>
                     </div>
+                    <div class="feature-card">
+                        <h3>다양한 협업</h3>
+                        <p>다양한 크리에이터,작가와의 협업을 진행합니다</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -75,14 +79,14 @@
         <section class="page-hero">
             <div class="container">
                 <h1 class="page-title">하루편지</h1>
-                <p class="page-lead">바쁜 일상 속 잠시 멈추어 설 수 있는 시간<br>당신을 위한 아주 작은 선물</p>
+                <p class="page-lead">힘든 일상 속 잠시 멈추어 설 수 있는 시간<br>당신을 위한 아주 작은 선물</p>
             </div>
         </section>
 
         <section class="content-section">
             <div class="container">
                 <div class="about-content">
-                    <p>바쁜 일상 속 잠시 멈추어 설 수 있는 시간, 그리고 당신을 위한 아주 작은 선물이 되고 싶어요.</p>
+                    <p>힘든 일상 속 잠시 멈추어 설 수 있는 시간, 그리고 당신을 위한 아주 작은 선물이 되고 싶어요.</p>
                     <p>매달 도착하는 편지를 통해 작은 위로를 전해드립니다. 혼자가 아니라는 것을 느껴보세요.</p>
                 </div>
             </div>
@@ -94,15 +98,15 @@
                 <div class="who-grid">
                     <div class="who-card">
                         <h3>위로가 필요할 때</h3>
-                        <p>우울하거나 외로운 순간, 작은 위로가 필요하신 분</p>
+                        <p>우울하거나 외로운 순간, <br>작은 위로가 필요하신 분</p>
                     </div>
                     <div class="who-card">
                         <h3>혼자만의 시간이 많을 때</h3>
-                        <p>대인관계가 어렵거나 혼자만의 시간이 많으신 분</p>
+                        <p>대인관계가 어렵거나<br> 혼자만의 시간이 많으신 분</p>
                     </div>
                     <div class="who-card">
                         <h3>감성적인 경험을 원할 때</h3>
-                        <p>아날로그 감성과 진심 어린 메시지를 좋아하시는 분</p>
+                        <p>아날로그 감성과 <br>진심 어린 메시지를 좋아하시는 분</p>
                     </div>
                 </div>
             </div>
@@ -152,11 +156,11 @@
         </section>
 
         <section class="form-section">
-            <div class="container">
+            <!-- <div class="container">
                 <div class="form-wrapper">
                     <iframe data-tally-src="https://tally.so/embed/xXxqoG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="706" frameborder="0" marginheight="0" marginwidth="0" title="하루편지 신청"></iframe>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <section class="benefits-section">
@@ -181,11 +185,12 @@
     </main>
 
     <!-- FOOTER -->
-    <div id="footer-container"></div>
-
     <!-- SCRIPTS -->
     <script src="../script.js"></script>
-    <script src="../footer.js"></script>
+    <footer>
+        <div id="footer-container"></div>
+        <script src="../footer.js"></script>
+    </footer>
 
     <script>
         function showPage(pageId) {
@@ -224,6 +229,5 @@
         // Tally 폼 스크립트
         var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
     </script>
-    <script src="../js/bug-banner.js"></script>
 </body>
 </html>
