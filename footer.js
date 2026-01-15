@@ -26,7 +26,6 @@
                         <h4>Services</h4>
                         <a href="/ondaypost/" class="footer-link">하루편지</a>
                         <a href="/heartsend/" class="footer-link">HeartSend</a>
-                        <a href="/christmascard/" class="footer-link">크리스마스 엽서</a>
                         <a href="/#services" class="footer-link">전체 서비스</a>
                     </div>
                     
@@ -37,6 +36,7 @@
                         <a href="/#about" class="footer-link">회사 소개</a>
                         <a href="/business/" class="footer-link">비즈니스</a>
                         <a href="/#contact" class="footer-link">문의하기</a>
+                        <a href="/collab/" class="footer-link">협업관련</a>
                     </div>
                     
                     <!-- 법적 고지 -->
